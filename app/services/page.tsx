@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,15 +7,52 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Users, Globe, Target, TrendingUp, Shield, Zap } from "lucide-react"
 import Link from "next/link"
+import { FAQSection } from "@/components/faq-section"
+import { motion } from "framer-motion"
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
+        {/* 🌊 Animated Curved Background */}
+      <motion.svg
+        className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <motion.path
+          d="M0,200 Q150,100 300,200 T600,200 T900,200 T1200,200"
+          fill="none"
+          stroke="url(#gradient)"
+          strokeWidth="3"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: [0, 1, 0.6] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.path
+          d="M0,300 Q150,400 300,300 T600,300 T900,300 T1200,300"
+          fill="none"
+          stroke="url(#gradient2)"
+          strokeWidth="2"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: [0.2, 0.8, 0.4] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        />
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#0b0f7e" />
+            <stop offset="100%" stopColor="#4dfbdf" />
+          </linearGradient>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#4dfbdf" />
+            <stop offset="100%" stopColor="#0b0f7e" />
+          </linearGradient>
+        </defs>
+      </motion.svg>
         <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-3xl">
             <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Our Services</Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
@@ -31,6 +70,47 @@ export default function ServicesPage() {
                 <Link href="/jobs">View Open Positions</Link>
               </Button>
             </div>
+          </div>
+                    {/* 🪄 Right Column (Cards) */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
+            <div className="grid grid-cols-2 gap-4">
+
+              <div className="space-y-4 pt-8">
+                <Card className="p-6 bg-[#0b0f7e] text-white shadow-md">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-sm">Success Rate</h4>
+                    <div className="text-4xl font-bold">95%</div>
+                    <p className="text-xs opacity-90">Successful placements</p>
+                  </div>
+                </Card>
+
+                <Card className="p-6 bg-white text-[#0b0f7e] border shadow-md">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-sm">Gulf Opportunities</h4>
+                    <div className="text-4xl font-bold">500+</div>
+                    <p className="text-xs text-muted-foreground">Active positions in GCC</p>
+                  </div>
+                </Card>
+              </div>
+                            <Card className="p-6 space-y-4 bg-[#4dfbdf]/20 text-[#0b0f7e] backdrop-blur-md border-none shadow-md">
+                <img
+                  src="/professional-african-woman-smiling.jpg"
+                  alt="Professional candidate"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+                <div className="space-y-2">
+                  <h3 className="font-semibold">Grace Wanjiku</h3>
+                  <p className="text-sm opacity-90">Healthcare Professional</p>
+                  <Badge className="bg-[#0b0f7e] text-white">Placed in UAE</Badge>
+                </div>
+              </Card>
+            </div>
+          </motion.div>
           </div>
         </div>
       </section>
@@ -323,6 +403,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection />
 
       <Footer />
     </div>

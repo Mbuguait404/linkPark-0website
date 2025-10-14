@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { MapPin, Briefcase, Clock, DollarSign, Search, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export default function JobsPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -136,6 +137,42 @@ export default function JobsPage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-12 px-4 bg-gradient-to-b from-muted/50 to-background">
+      {/* 🌊 Animated Curved Background */}
+      <motion.svg
+        className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <motion.path
+          d="M0,200 Q150,100 300,200 T600,200 T900,200 T1200,200"
+          fill="none"
+          stroke="url(#gradient)"
+          strokeWidth="3"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: [0, 1, 0.6] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.path
+          d="M0,300 Q150,400 300,300 T600,300 T900,300 T1200,300"
+          fill="none"
+          stroke="url(#gradient2)"
+          strokeWidth="2"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: [0.2, 0.8, 0.4] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 3}}
+        />
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#0b0f7e" />
+            <stop offset="100%" stopColor="#4dfbdf" />
+          </linearGradient>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#4dfbdf" />
+            <stop offset="100%" stopColor="#0b0f7e" />
+          </linearGradient>
+        </defs>
+      </motion.svg>
+      
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Current Opportunities</Badge>

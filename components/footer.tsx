@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -122,8 +123,16 @@ export function Footer() {
 
         <div className="pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary-foreground rounded-md" />
-            <span className="text-xl font-semibold">LinkPark</span>
+            {/* Logo */}
+                      <Link href="/" className="flex items-center gap-2">
+                        <Image
+                          src="/logo.png"
+                          alt="LinkPark Logo"
+                          width={120}
+                          height={40}
+                          className="h-10 w-auto object-contain"
+                        />
+                      </Link>
           </div>
           <p className="text-sm opacity-80">© 2025 LinkPark Recruitment Agency. All rights reserved.</p>
         </div>

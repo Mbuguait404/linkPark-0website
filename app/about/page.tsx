@@ -1,12 +1,16 @@
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Target, Award, Globe, Heart, TrendingUp } from "lucide-react"
+import { Users, Target, Award, Globe, Heart, TrendingUp, CheckCircle, Shield } from "lucide-react"
 import Link from "next/link"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
+      <Header />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-purple-50 to-white py-20">
         <div className="container mx-auto px-4">
@@ -48,44 +52,96 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership Team */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Leadership</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Leadership Team</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Meet the experienced team driving LinkPark's mission forward
+              Meet the experienced professionals driving LinkPark's mission forward
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="p-8 text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <Users className="w-16 h-16 text-white" />
+            <Card className="p-8">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mb-6 flex items-center justify-center">
+                  <Users className="w-16 h-16 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Dominic Chelimo</h3>
+                <p className="text-purple-600 font-semibold mb-4">Chief Executive Officer</p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  With over 15 years of experience in international recruitment, Dominic leads LinkPark's strategic
+                  vision and oversees operations across all markets. His expertise in Gulf region employment has helped
+                  thousands of Kenyan professionals secure life-changing opportunities.
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary">Strategic Leadership</Badge>
+                  <Badge variant="secondary">Gulf Markets Expert</Badge>
+                  <Badge variant="secondary">15+ Years Experience</Badge>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2">Dominic Chelimo</h3>
-              <p className="text-purple-600 font-semibold mb-4">Chief Executive Officer</p>
-              <p className="text-muted-foreground leading-relaxed">
-                With over 15 years of experience in international recruitment, Dominic leads LinkPark's strategic vision
-                and oversees operations across all markets.
-              </p>
             </Card>
-            <Card className="p-8 text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <Users className="w-16 h-16 text-white" />
+            <Card className="p-8">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mb-6 flex items-center justify-center">
+                  <Users className="w-16 h-16 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Alicent Togom</h3>
+                <p className="text-purple-600 font-semibold mb-4">Executive Director</p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Alicent brings extensive expertise in talent management and client relations, ensuring exceptional
+                  service delivery and candidate success. She oversees candidate preparation, compliance, and
+                  post-placement support programs.
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary">Talent Management</Badge>
+                  <Badge variant="secondary">Client Relations</Badge>
+                  <Badge variant="secondary">Compliance Expert</Badge>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2">Alicent Togom</h3>
-              <p className="text-purple-600 font-semibold mb-4">Executive Director</p>
-              <p className="text-muted-foreground leading-relaxed">
-                Alicent brings extensive expertise in talent management and client relations, ensuring exceptional
-                service delivery and candidate success.
-              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Certifications & Accreditations</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Recognized and certified by leading regulatory bodies
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Licensed Recruitment Agency</h3>
+              <p className="text-muted-foreground mb-4">Fully licensed by the National Employment Authority of Kenya</p>
+              <Badge className="bg-green-100 text-green-700 hover:bg-green-100">Verified</Badge>
+            </Card>
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">ISO Certified</h3>
+              <p className="text-muted-foreground mb-4">ISO 9001:2015 certified for quality management systems</p>
+              <Badge className="bg-green-100 text-green-700 hover:bg-green-100">Certified</Badge>
+            </Card>
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Gulf Cooperation Council</h3>
+              <p className="text-muted-foreground mb-4">Approved recruitment partner for GCC member states</p>
+              <Badge className="bg-green-100 text-green-700 hover:bg-green-100">Approved</Badge>
             </Card>
           </div>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
@@ -143,43 +199,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Contact Info */}
+      {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Visit Our Office</h2>
-            <Card className="p-8">
-              <div className="space-y-4 text-left">
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Headquarters</h3>
-                  <p className="text-muted-foreground">
-                    Sagaas Business Centre, 3rd Floor
-                    <br />
-                    Eldoret City, Kenya
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Contact</h3>
-                  <p className="text-muted-foreground">
-                    Phone: +254 722 447 701 / +254 790 388 833
-                    <br />
-                    Email: overseasconnections@gmail.com
-                    <br />
-                    Website: www.linkparkoffshore.co.ke
-                  </p>
-                </div>
-              </div>
-              <div className="mt-8">
-                <Link href="/jobs">
-                  <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-                    Explore Opportunities
-                  </Button>
-                </Link>
-              </div>
-            </Card>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Join thousands of successful professionals who have transformed their careers with LinkPark
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/jobs">
+                <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+                  Explore Opportunities
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   )
 }

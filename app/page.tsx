@@ -25,8 +25,8 @@ export default function Home() {
       <PricingSection />
       <ReviewsSection />
       <ValueProps />
-      <FAQSection />
       <FinalCTA />
+      <FAQSection />
       <Footer />
     </main>
   )

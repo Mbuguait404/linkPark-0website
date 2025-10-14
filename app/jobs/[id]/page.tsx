@@ -389,7 +389,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
               <div>
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <Badge className="mb-3 bg-purple-100 text-purple-700 hover:bg-purple-100">{job.industry}</Badge>
+                    <Badge className="mb-3 bg-secondary text-secondary-700 hover:bg-secondary">{job.industry}</Badge>
                     <h1 className="text-3xl md:text-4xl font-bold mb-2">{job.title}</h1>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Building2 className="w-4 h-4" />
@@ -409,28 +409,28 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                 {/* Job Meta */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y">
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-purple-600" />
+                    <MapPin className="w-5 h-5 text-secondary-600" />
                     <div>
                       <div className="text-xs text-muted-foreground">Location</div>
                       <div className="font-semibold">{job.location}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <DollarSign className="w-5 h-5 text-purple-600" />
+                    <DollarSign className="w-5 h-5 text-secondary-600" />
                     <div>
                       <div className="text-xs text-muted-foreground">Salary</div>
                       <div className="font-semibold">{job.salary}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Briefcase className="w-5 h-5 text-purple-600" />
+                    <Briefcase className="w-5 h-5 text-secondary-600" />
                     <div>
                       <div className="text-xs text-muted-foreground">Experience</div>
                       <div className="font-semibold">{job.experience}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-purple-600" />
+                    <Clock className="w-5 h-5 text-secondary-600" />
                     <div>
                       <div className="text-xs text-muted-foreground">Type</div>
                       <div className="font-semibold">{job.type}</div>
@@ -451,7 +451,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                 <ul className="space-y-3">
                   {job.responsibilities.map((responsibility: string, index: number) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{responsibility}</span>
                     </li>
                   ))}
@@ -464,7 +464,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                 <ul className="space-y-3">
                   {job.requirements.map((requirement: string, index: number) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{requirement}</span>
                     </li>
                   ))}
@@ -477,7 +477,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                 <ul className="space-y-3">
                   {job.benefits.map((benefit: string, index: number) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-secondary-600 flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{benefit}</span>
                     </li>
                   ))}
@@ -505,7 +505,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                   <div>
                     <div className="text-sm text-muted-foreground mb-1">Application Deadline</div>
                     <div className="flex items-center gap-2 font-semibold">
-                      <Calendar className="w-4 h-4 text-purple-600" />
+                      <Calendar className="w-4 h-4 text-secondary-600" />
                       {job.deadline}
                     </div>
                   </div>
@@ -517,7 +517,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                     <div className="text-sm text-muted-foreground mb-1">Posted</div>
                     <div className="font-semibold">{job.posted}</div>
                   </div>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700" size="lg" asChild>
+                  <Button className="w-full bg-secondary hover:bg-secondary" size="lg" asChild>
                     <Link href="/signup">Apply Now</Link>
                   </Button>
                   <Button className="w-full bg-transparent" variant="outline" size="lg" asChild>
@@ -575,18 +575,18 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                 .slice(0, 3)
                 .map((similarJob: any) => (
                   <Card key={similarJob.id} className="p-6 hover:shadow-lg transition-shadow">
-                    <Badge className="mb-3 bg-purple-100 text-purple-700 hover:bg-purple-100">
+                    <Badge className="mb-3 bg-secondary text-secondary-700 hover:bg-secondary">
                       {similarJob.industry}
                     </Badge>
                     <h3 className="text-xl font-bold mb-2">{similarJob.title}</h3>
                     <p className="text-sm text-muted-foreground mb-4">{similarJob.company}</p>
                     <div className="space-y-2 text-sm mb-4">
                       <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-purple-600" />
+                        <MapPin className="w-4 h-4 text-secondary-600" />
                         <span>{similarJob.location}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <DollarSign className="w-4 h-4 text-purple-600" />
+                        <DollarSign className="w-4 h-4 text-secondary-600" />
                         <span>{similarJob.salary}</span>
                       </div>
                     </div>
