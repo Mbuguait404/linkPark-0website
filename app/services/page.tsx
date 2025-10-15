@@ -5,10 +5,12 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Users, Globe, Target, TrendingUp, Shield, Zap } from "lucide-react"
+import { ArrowRight, Users, Globe, Target, TrendingUp, Shield, Zap, GraduationCap, PenTool } from "lucide-react"
 import Link from "next/link"
 import { FAQSection } from "@/components/faq-section"
 import { motion } from "framer-motion"
+import { ServicesSection } from "@/components/services-section"
+import { ImageCollage } from "@/components/image-collage"
 
 export default function ServicesPage() {
   return (
@@ -116,217 +118,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Main Services Grid */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What we offer</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Specialized recruitment services designed to connect Kenyan talent with Gulf opportunities
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service 1 */}
-            <Card className="border-2 hover:border-primary transition-colors">
-              <CardContent className="pt-8">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Gulf Region Placements</h3>
-                <p className="text-muted-foreground mb-6">
-                  Specialized placement services for UAE, Saudi Arabia, Qatar, Oman, Bahrain, and Kuwait. We handle visa
-                  processing, documentation, and pre-departure orientation.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Complete visa and work permit assistance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Pre-departure orientation programs</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Ongoing support throughout contract</span>
-                  </li>
-                </ul>
-                <Button variant="link" className="p-0" asChild>
-                  <Link href="/services/gulf-placements">
-                    Learn more <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Service 2 */}
-            <Card className="border-2 hover:border-primary transition-colors">
-              <CardContent className="pt-8">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Healthcare Recruitment</h3>
-                <p className="text-muted-foreground mb-6">
-                  Specialized placement of nurses, doctors, and allied health professionals in Gulf region hospitals and
-                  medical facilities with full licensing support.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>License verification and processing</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Dataflow and credential verification</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Exam preparation guidance</span>
-                  </li>
-                </ul>
-                <Button variant="link" className="p-0" asChild>
-                  <Link href="/services/healthcare-recruitment">
-                    Learn more <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Service 3 */}
-            <Card className="border-2 hover:border-primary transition-colors">
-              <CardContent className="pt-8">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                  <Zap className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Hospitality Staffing</h3>
-                <p className="text-muted-foreground mb-6">
-                  Recruitment for hotels, resorts, restaurants, and tourism sectors across the Gulf region. From
-                  entry-level to management positions.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>5-star hotel placements</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Restaurant and catering positions</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Tourism and event management</span>
-                  </li>
-                </ul>
-                <Button variant="link" className="p-0" asChild>
-                  <Link href="/services/hospitality-staffing">
-                    Learn more <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Service 4 */}
-            <Card className="border-2 hover:border-primary transition-colors">
-              <CardContent className="pt-8">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Engineering & Technical</h3>
-                <p className="text-muted-foreground mb-6">
-                  Placement of engineers and technical professionals in construction, oil & gas, and infrastructure
-                  projects across the Gulf region.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Civil and mechanical engineers</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Oil & gas sector positions</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Construction management roles</span>
-                  </li>
-                </ul>
-                <Button variant="link" className="p-0" asChild>
-                  <Link href="/services/engineering-technical">
-                    Learn more <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Service 5 */}
-            <Card className="border-2 hover:border-primary transition-colors">
-              <CardContent className="pt-8">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                  <TrendingUp className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">IT Professionals</h3>
-                <p className="text-muted-foreground mb-6">
-                  Recruitment of IT professionals, software developers, and technology specialists for Gulf region tech
-                  companies and digital transformation projects.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Software development roles</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Network and cybersecurity positions</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>IT management opportunities</span>
-                  </li>
-                </ul>
-                <Button variant="link" className="p-0" asChild>
-                  <Link href="/services/it-professionals">
-                    Learn more <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Service 6 */}
-            <Card className="border-2 hover:border-primary transition-colors">
-              <CardContent className="pt-8">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Compliance & Documentation</h3>
-                <p className="text-muted-foreground mb-6">
-                  Complete documentation, visa processing, and compliance services ensuring smooth and legal
-                  international placements for all candidates.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Document authentication & attestation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Medical examination coordination</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Police clearance assistance</span>
-                  </li>
-                </ul>
-                <Button variant="link" className="p-0" asChild>
-                  <Link href="/services/compliance-documentation">
-                    Learn more <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
+      <ServicesSection />
       {/* Process Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
@@ -380,6 +172,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+        <ImageCollage />
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-primary text-primary-foreground">

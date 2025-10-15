@@ -1,180 +1,203 @@
+// "use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2, Users, Globe, Zap, Target, TrendingUp, Shield } from "lucide-react"
+import { CheckCircle2, Users, Globe, Zap, Target, TrendingUp, Shield, GraduationCap, PenTool } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { FAQSection } from "@/components/faq-section"
 
 const services = {
-  "gulf-placements": {
-    title: "Gulf Region Placements",
+  "local-international-placement": {
+    title: "Local & International Job Placement",
     icon: Globe,
     description:
-      "Specialized recruitment services connecting Kenyan professionals with opportunities across the Gulf Cooperation Council (GCC) countries.",
+      "Connecting skilled Kenyan professionals with employers locally and abroad across high-demand industries.",
     longDescription:
-      "Our Gulf placement service is our flagship offering, connecting talented Kenyan professionals with career opportunities in the UAE, Saudi Arabia, Qatar, Oman, Bahrain, and Kuwait. We handle the entire process from initial screening to visa processing and pre-departure orientation.",
+      "LinkPark Recruitment Agency specializes in placing qualified candidates in both local and international roles. Whether you're a skilled professional seeking global opportunities or a company looking to hire locally, our placement services deliver results with precision, speed, and integrity.",
     benefits: [
-      "Comprehensive visa and work permit assistance",
-      "Pre-departure orientation and cultural training",
-      "Ongoing support throughout your contract",
-      "Competitive salary packages and benefits",
-      "Direct employer connections",
-      "Post-arrival settlement assistance",
+      "Access to verified global employers",
+      "Tailored placements based on skills and career goals",
+      "Transparent and ethical recruitment process",
+      "Pre-departure guidance and orientation",
+      "Continuous candidate support and follow-up",
+      "Opportunities across multiple industries",
     ],
-    industries: ["Healthcare", "Hospitality", "Engineering", "IT & Technology", "Construction", "Energy & Oil"],
+    industries: [
+      "Healthcare",
+      "Hospitality",
+      "Engineering",
+      "Information Technology",
+      "Construction",
+      "Energy & Oil",
+    ],
     stats: [
       { label: "Successful Placements", value: "3,500+" },
-      { label: "Partner Companies", value: "150+" },
-      { label: "Average Salary Increase", value: "200%" },
-      { label: "Success Rate", value: "98%" },
+      { label: "Partner Employers", value: "150+" },
+      { label: "Countries Served", value: "6+" },
+      { label: "Placement Satisfaction Rate", value: "98%" },
     ],
   },
-  "healthcare-recruitment": {
-    title: "Healthcare Recruitment",
+
+  "staffing-solutions": {
+    title: "Permanent & Temporary Staffing",
     icon: Users,
     description:
-      "Specialized placement of healthcare professionals including nurses, doctors, and allied health workers in Gulf region hospitals and clinics.",
+      "Flexible staffing solutions designed to meet evolving project and business needs for local and international employers.",
     longDescription:
-      "We specialize in placing qualified healthcare professionals in leading hospitals and medical facilities across the Gulf region. Our team understands the specific licensing requirements and cultural considerations for healthcare workers.",
+      "Different projects and organizations require different staffing models. LinkPark provides both permanent and temporary staffing solutions, empowering job seekers with meaningful opportunities while meeting global employer needs efficiently.",
     benefits: [
-      "License verification and processing support",
-      "Dataflow and credential verification assistance",
-      "Prometric and other exam preparation guidance",
-      "Placement in JCI-accredited facilities",
-      "Competitive tax-free salaries",
-      "Accommodation and transportation benefits",
+      "On-demand workforce support",
+      "Scalable staffing for short or long-term projects",
+      "Employer-employee matching based on needs",
+      "Full HR compliance and contract management",
+      "Continuous candidate performance tracking",
+      "Rapid deployment capabilities",
     ],
     industries: [
-      "Nursing",
-      "General Practice",
-      "Specialist Doctors",
-      "Allied Health",
-      "Medical Technology",
-      "Healthcare Administration",
+      "Construction",
+      "Hospitality",
+      "Manufacturing",
+      "Healthcare",
+      "IT Services",
+      "Retail & Logistics",
     ],
     stats: [
-      { label: "Healthcare Placements", value: "1,200+" },
-      { label: "Partner Hospitals", value: "45+" },
-      { label: "Countries Served", value: "6" },
-      { label: "Average Processing Time", value: "60 days" },
+      { label: "Staffing Contracts Managed", value: "1,000+" },
+      { label: "Partner Organizations", value: "200+" },
+      { label: "Average Retention Rate", value: "93%" },
+      { label: "Turnaround Time", value: "1-2 weeks" },
     ],
   },
-  "hospitality-staffing": {
-    title: "Hospitality Staffing",
-    icon: Zap,
-    description:
-      "Recruitment of hospitality professionals for hotels, resorts, restaurants, and tourism sectors across the Gulf region.",
-    longDescription:
-      "The Gulf region's booming tourism and hospitality sector offers excellent opportunities for Kenyan professionals. We place staff at all levels from entry positions to management roles in 5-star hotels and resorts.",
-    benefits: [
-      "Placement in luxury hotels and resorts",
-      "Tips and service charge benefits",
-      "Career progression opportunities",
-      "Free accommodation and meals",
-      "Annual leave and return tickets",
-      "Training and development programs",
-    ],
-    industries: ["Hotels & Resorts", "Restaurants", "Catering", "Tourism", "Event Management", "Cruise Lines"],
-    stats: [
-      { label: "Hospitality Placements", value: "2,000+" },
-      { label: "Partner Hotels", value: "80+" },
-      { label: "Average Monthly Salary", value: "$800-2,500" },
-      { label: "Retention Rate", value: "92%" },
-    ],
-  },
-  "engineering-technical": {
-    title: "Engineering & Technical",
+
+  "executive-search": {
+    title: "Executive Search & Headhunting",
     icon: Target,
     description:
-      "Placement of engineers and technical professionals in construction, oil & gas, and infrastructure projects across the Gulf.",
+      "Identifying and placing visionary leaders who drive transformation and growth in international organizations.",
     longDescription:
-      "The Gulf region's massive infrastructure development creates constant demand for qualified engineers and technical professionals. We place civil, mechanical, electrical, and petroleum engineers in major projects.",
+      "Our Executive Search and Headhunting service goes beyond traditional recruitment to attract top-tier leaders for global roles. We focus on connecting organizations with professionals who can lead expansions, manage offshore operations, and deliver results in complex environments.",
     benefits: [
-      "High-value project placements",
-      "Competitive salary packages",
-      "Professional development opportunities",
-      "International project experience",
-      "Modern work environments",
-      "Family visa sponsorship options",
+      "Access to senior-level global talent",
+      "Discreet and confidential recruitment process",
+      "Leadership and cultural fit assessments",
+      "Strategic guidance throughout the hiring cycle",
+      "Support for relocation and onboarding",
+      "Tailored searches for niche executive roles",
     ],
     industries: [
-      "Civil Engineering",
-      "Mechanical Engineering",
-      "Electrical Engineering",
-      "Oil & Gas",
-      "Construction Management",
-      "Project Management",
+      "Corporate Management",
+      "Engineering Leadership",
+      "Healthcare Administration",
+      "Finance & Banking",
+      "Technology Leadership",
+      "Operations & Strategy",
     ],
     stats: [
-      { label: "Engineers Placed", value: "800+" },
-      { label: "Major Projects", value: "120+" },
-      { label: "Average Salary", value: "$3,000-8,000" },
-      { label: "Contract Duration", value: "2-3 years" },
+      { label: "Executive Placements", value: "300+" },
+      { label: "Leadership Roles Filled", value: "100+" },
+      { label: "Average Hiring Time", value: "45 days" },
+      { label: "Client Retention Rate", value: "97%" },
     ],
   },
-  "it-professionals": {
-    title: "IT Professionals",
+
+  "hr-consulting": {
+    title: "HR Consulting & Talent Advisory",
     icon: TrendingUp,
     description:
-      "Recruitment of IT professionals, software developers, and technology specialists for Gulf region tech companies and enterprises.",
+      "Helping organizations build high-performing teams through strategic HR and workforce development advisory.",
     longDescription:
-      "As the Gulf region rapidly digitizes, demand for IT professionals continues to grow. We place software developers, network engineers, cybersecurity specialists, and IT managers in leading companies.",
+      "LinkPark provides expert HR consulting to help employers optimize workforce strategies, improve retention, and strengthen organizational culture. We also guide professionals in career growth and global readiness through personalized coaching and development plans.",
     benefits: [
-      "Work with cutting-edge technology",
-      "Competitive tax-free salaries",
-      "Modern office environments",
-      "Professional certification support",
-      "Career advancement opportunities",
-      "Relocation and settling-in support",
+      "Workforce planning and analysis",
+      "Performance and talent management",
+      "Employee engagement strategies",
+      "Organizational development support",
+      "Training and professional development programs",
+      "Employer branding and retention strategies",
     ],
     industries: [
-      "Software Development",
-      "Network Engineering",
-      "Cybersecurity",
-      "Data Science",
-      "Cloud Computing",
-      "IT Management",
+      "Corporate HR",
+      "Education & Training",
+      "Healthcare",
+      "IT & Professional Services",
+      "Manufacturing",
+      "Public Sector",
     ],
     stats: [
-      { label: "IT Placements", value: "500+" },
-      { label: "Tech Companies", value: "60+" },
-      { label: "Average Salary", value: "$2,500-7,000" },
-      { label: "Demand Growth", value: "35% YoY" },
+      { label: "Advisory Projects", value: "250+" },
+      { label: "Corporate Clients", value: "90+" },
+      { label: "Improved Retention Rate", value: "35%" },
+      { label: "Average ROI on Consulting", value: "4x" },
     ],
   },
-  "compliance-documentation": {
-    title: "Compliance & Documentation",
-    icon: Shield,
+
+  "career-support": {
+    title: "CV Writing & Interview Coaching",
+    icon: PenTool,
     description:
-      "Complete documentation, visa processing, and compliance services ensuring smooth and legal international placements.",
+      "Empowering job seekers to present their best selves through professional CV writing and interview coaching services.",
     longDescription:
-      "We handle all the complex paperwork and compliance requirements for international placements. Our experienced team ensures all documentation meets Gulf country requirements and processes are completed efficiently.",
+      "Every candidate has a story worth telling. Our CV Writing and Interview Coaching services help professionals communicate their skills effectively, stand out in global job markets, and succeed in both local and offshore interviews.",
     benefits: [
-      "Complete visa processing support",
-      "Document authentication and attestation",
-      "Medical examination coordination",
-      "Police clearance assistance",
-      "Contract review and verification",
-      "Pre-departure briefing sessions",
+      "Professional CV and cover letter drafting",
+      "Mock interviews and personalized feedback",
+      "Job market readiness training",
+      "Industry-specific CV tailoring",
+      "LinkedIn and digital profile optimization",
+      "Confidence and communication coaching",
     ],
     industries: [
-      "All Sectors",
-      "Healthcare Licensing",
-      "Engineering Credentials",
-      "Educational Certificates",
-      "Professional Licenses",
-      "Background Verification",
+      "All Job Sectors",
+      "Healthcare",
+      "Engineering",
+      "Hospitality",
+      "IT & Digital",
+      "Administrative Roles",
     ],
     stats: [
-      { label: "Documents Processed", value: "10,000+" },
-      { label: "Success Rate", value: "99.5%" },
-      { label: "Average Processing", value: "45 days" },
-      { label: "Countries Covered", value: "6" },
+      { label: "CVs Enhanced", value: "5,000+" },
+      { label: "Interview Success Rate", value: "95%" },
+      { label: "Job Offers Received", value: "4,000+" },
+      { label: "Countries Reached", value: "10+" },
+    ],
+  },
+
+  "graduate-placement": {
+    title: "Internship & Graduate Placement",
+    icon: GraduationCap,
+    description:
+      "Creating pathways for youth and graduates to gain real-world experience and international exposure.",
+    longDescription:
+      "Our Internship and Graduate Placement Programs equip young professionals with industry exposure, mentorship, and skills needed to launch successful global careers. LinkPark partners with international employers to provide structured, rewarding early-career experiences.",
+    benefits: [
+      "Industry-relevant internships",
+      "Mentorship and career guidance",
+      "Opportunities for permanent employment",
+      "Exposure to international work environments",
+      "Certification and recommendation letters",
+      "Holistic career development support",
+    ],
+    industries: [
+      "Hospitality",
+      "Healthcare",
+      "IT & Digital Services",
+      "Engineering",
+      "Finance & Accounting",
+      "Customer Service",
+    ],
+    stats: [
+      { label: "Graduates Placed", value: "1,000+" },
+      { label: "Partner Institutions", value: "30+" },
+      { label: "Countries Served", value: "6" },
+      { label: "Employment Conversion Rate", value: "70%" },
     ],
   },
 }
+
 
 export function generateStaticParams() {
   return Object.keys(services).map((slug) => ({
@@ -199,16 +222,16 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-secondary-50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl">
-            <Badge className="mb-4 bg-secondary text-secondary hover:bg-secondary">Service Details</Badge>
+            <Badge className="mb-4 bg-primary/10 text-primary hover:bg-secondary">Service Details</Badge>
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-lg bg-secondary flex items-center justify-center">
+              <div className="w-16 h-16 rounded-lg bg-primary flex items-center justify-center">
                 <Icon className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-balance">{service.title}</h1>
             </div>
             <p className="text-xl text-muted-foreground mb-8 text-pretty">{service.description}</p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-secondary hover:bg-secondary" asChild>
+              <Button size="lg" className="bg-primary hover:bg-secondary" asChild>
                 <Link href="/jobs">View Open Positions</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
@@ -220,7 +243,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 px-4 bg-secondary text-white">
+      <section className="py-12 px-4 bg-primary text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {service.stats.map((stat, index) => (
@@ -240,11 +263,16 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             <div>
               <h2 className="text-3xl font-bold mb-6">Overview</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">{service.longDescription}</p>
-              <p className="text-muted-foreground leading-relaxed">
-                At LinkPark, we understand that international placement is more than just finding a job - it's about
-                building a career and creating opportunities for personal and professional growth. Our team provides
-                comprehensive support throughout your journey.
-              </p>
+              <blockquote className="relative border-l-4 border-[#4dfbdf] pl-6 italic text-lg text-[#0b0f7e] leading-relaxed">
+  <p className="text-balance">
+    “At LinkPark, we understand that international placement is more than just finding a job — it's about building a
+    career and creating opportunities for personal and professional growth. Our team provides comprehensive support
+    throughout your journey.”
+  </p>
+
+  <span className="absolute -top-4 left-0 text-[#4dfbdf] text-5xl font-serif opacity-60 select-none">“</span>
+</blockquote>
+
             </div>
             <Card className="p-8 border-2">
               <h3 className="text-2xl font-bold mb-6">Key Benefits</h3>
@@ -328,7 +356,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to start your journey?</h2>
           <p className="text-xl mb-8 opacity-90">Contact us today to learn more about opportunities in this sector</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="default" asChild>
               <Link href="/jobs">Browse Jobs</Link>
             </Button>
             <Button
@@ -342,6 +370,10 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </div>
         </div>
       </section>
+
+      <FAQSection />
+
+      {/* Footer */}
 
       <Footer />
     </div>

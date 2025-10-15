@@ -126,7 +126,7 @@ export function Footer() {
             {/* Logo */}
                       <Link href="/" className="flex items-center gap-2">
                         <Image
-                          src="/logo.png"
+                          src="/logo/logo_white.png"
                           alt="LinkPark Logo"
                           width={120}
                           height={40}

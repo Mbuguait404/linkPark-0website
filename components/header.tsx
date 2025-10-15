@@ -89,7 +89,7 @@ export function Header() {
       },
     },
     { name: "Jobs", href: "/jobs" },
-    { name: "About", href: "#about" },
+    { name: "About", href: "/about" },
   ]
 
   return (

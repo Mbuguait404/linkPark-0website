@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { MapPin, Briefcase, Clock, DollarSign, Search, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { jobs } from "../../data/jobs-data";
 
 export default function JobsPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -18,104 +19,6 @@ export default function JobsPage() {
   const [selectedLocation, setSelectedLocation] = useState("all")
   const [selectedType, setSelectedType] = useState("all")
 
-  const jobs = [
-    {
-      id: 1,
-      title: "Senior Software Engineer",
-      company: "TechCorp Global",
-      location: "San Francisco, CA",
-      type: "Permanent",
-      industry: "Technology",
-      salary: "$150,000 - $200,000",
-      posted: "2 days ago",
-      description: "Leading tech company seeking experienced software engineer to build scalable cloud solutions.",
-      skills: ["React", "Node.js", "AWS", "TypeScript"],
-    },
-    {
-      id: 2,
-      title: "Financial Analyst",
-      company: "Global Finance Inc",
-      location: "New York, NY",
-      type: "Permanent",
-      industry: "Finance",
-      salary: "$90,000 - $120,000",
-      posted: "1 week ago",
-      description: "Join our investment team to analyze market trends and provide strategic financial insights.",
-      skills: ["Excel", "Financial Modeling", "SQL", "Bloomberg"],
-    },
-    {
-      id: 3,
-      title: "Marketing Manager",
-      company: "Brand Solutions Ltd",
-      location: "London, UK",
-      type: "Contract",
-      industry: "Marketing",
-      salary: "£60,000 - £75,000",
-      posted: "3 days ago",
-      description: "Drive marketing strategy and lead campaigns for a fast-growing consumer brand.",
-      skills: ["Digital Marketing", "SEO", "Analytics", "Content Strategy"],
-    },
-    {
-      id: 4,
-      title: "Data Scientist",
-      company: "AI Innovations",
-      location: "Singapore",
-      type: "Permanent",
-      industry: "Technology",
-      salary: "$120,000 - $160,000",
-      posted: "5 days ago",
-      description: "Build machine learning models and drive data-driven decision making across the organization.",
-      skills: ["Python", "Machine Learning", "TensorFlow", "Statistics"],
-    },
-    {
-      id: 5,
-      title: "Registered Nurse",
-      company: "City Hospital",
-      location: "Toronto, Canada",
-      type: "Permanent",
-      industry: "Healthcare",
-      salary: "CAD $70,000 - $85,000",
-      posted: "1 day ago",
-      description: "Provide compassionate patient care in a modern healthcare facility with excellent benefits.",
-      skills: ["Patient Care", "Medical Records", "Emergency Response", "Team Collaboration"],
-    },
-    {
-      id: 6,
-      title: "Supply Chain Manager",
-      company: "Logistics Pro",
-      location: "Dubai, UAE",
-      type: "Permanent",
-      industry: "Logistics",
-      salary: "AED 180,000 - AED 240,000",
-      posted: "1 week ago",
-      description: "Optimize supply chain operations and manage vendor relationships across the Middle East region.",
-      skills: ["Supply Chain", "Procurement", "SAP", "Logistics"],
-    },
-    {
-      id: 7,
-      title: "Product Designer",
-      company: "Design Studio",
-      location: "Berlin, Germany",
-      type: "Contract",
-      industry: "Technology",
-      salary: "€65,000 - €85,000",
-      posted: "4 days ago",
-      description: "Create beautiful, user-centered designs for web and mobile applications.",
-      skills: ["Figma", "UI/UX", "Prototyping", "User Research"],
-    },
-    {
-      id: 8,
-      title: "Mechanical Engineer",
-      company: "Manufacturing Corp",
-      location: "Sydney, Australia",
-      type: "Permanent",
-      industry: "Engineering",
-      salary: "AUD $95,000 - AUD $120,000",
-      posted: "6 days ago",
-      description: "Design and develop mechanical systems for industrial manufacturing equipment.",
-      skills: ["CAD", "SolidWorks", "Manufacturing", "Quality Control"],
-    },
-  ]
 
   const filteredJobs = jobs.filter((job) => {
     const matchesSearch =
@@ -183,7 +86,7 @@ export default function JobsPage() {
           </div>
 
           {/* Search and Filters */}
-          <Card className="max-w-5xl mx-auto">
+          <Card className="max-w-7xl mx-auto">
             <CardContent className="pt-6">
               <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div className="lg:col-span-2 relative">
@@ -196,37 +99,58 @@ export default function JobsPage() {
                   />
                 </div>
 
-                <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Industry" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Industries</SelectItem>
-                    <SelectItem value="Technology">Technology</SelectItem>
-                    <SelectItem value="Finance">Finance</SelectItem>
-                    <SelectItem value="Healthcare">Healthcare</SelectItem>
-                    <SelectItem value="Marketing">Marketing</SelectItem>
-                    <SelectItem value="Engineering">Engineering</SelectItem>
-                    <SelectItem value="Logistics">Logistics</SelectItem>
-                  </SelectContent>
-                </Select>
+               <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
+  <SelectTrigger>
+    <SelectValue placeholder="Industry" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="all">All Industries</SelectItem>
+    <SelectItem value="Healthcare">Healthcare & Caregiving</SelectItem>
+    <SelectItem value="Construction">Construction & Skilled Trades</SelectItem>
+    <SelectItem value="Hospitality">Hospitality & Tourism</SelectItem>
+    <SelectItem value="Technology">Information Technology (IT)</SelectItem>
+    <SelectItem value="Engineering">Engineering & Technical</SelectItem>
+    <SelectItem value="Logistics">Logistics & Transportation</SelectItem>
+    <SelectItem value="Domestic">Domestic Work & Housekeeping</SelectItem>
+    <SelectItem value="Agriculture">Agriculture & Farm Work</SelectItem>
+    <SelectItem value="Education">Education</SelectItem>
+    <SelectItem value="Security">Security Services</SelectItem>
+    <SelectItem value="OilGas">Oil, Gas & Energy</SelectItem>
+  </SelectContent>
+</Select>
 
-                <Select value={selectedLocation} onValueChange={setSelectedLocation}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Location" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Locations</SelectItem>
-                    <SelectItem value="New York">New York</SelectItem>
-                    <SelectItem value="San Francisco">San Francisco</SelectItem>
-                    <SelectItem value="London">London</SelectItem>
-                    <SelectItem value="Singapore">Singapore</SelectItem>
-                    <SelectItem value="Toronto">Toronto</SelectItem>
-                    <SelectItem value="Dubai">Dubai</SelectItem>
-                    <SelectItem value="Berlin">Berlin</SelectItem>
-                    <SelectItem value="Sydney">Sydney</SelectItem>
-                  </SelectContent>
-                </Select>
+<Select value={selectedLocation} onValueChange={setSelectedLocation}>
+  <SelectTrigger>
+    <SelectValue placeholder="Location" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="all">All Locations</SelectItem>
+
+    {/* Europe */}
+    <SelectItem value="Germany">Germany</SelectItem>
+    <SelectItem value="United Kingdom">United Kingdom (UK)</SelectItem>
+    <SelectItem value="France">France</SelectItem>
+    <SelectItem value="Italy">Italy</SelectItem>
+    <SelectItem value="Netherlands">Netherlands</SelectItem>
+    <SelectItem value="Spain">Spain</SelectItem>
+    <SelectItem value="Poland">Poland</SelectItem>
+
+    {/* Middle East */}
+    <SelectItem value="UAE">United Arab Emirates (UAE)</SelectItem>
+    <SelectItem value="Saudi Arabia">Saudi Arabia</SelectItem>
+    <SelectItem value="Qatar">Qatar</SelectItem>
+    <SelectItem value="Kuwait">Kuwait</SelectItem>
+    <SelectItem value="Oman">Oman</SelectItem>
+    <SelectItem value="Bahrain">Bahrain</SelectItem>
+
+    {/* Other Regions */}
+    <SelectItem value="Canada">Canada</SelectItem>
+    <SelectItem value="Australia">Australia</SelectItem>
+    <SelectItem value="South Korea">South Korea</SelectItem>
+    <SelectItem value="Japan">Japan</SelectItem>
+  </SelectContent>
+</Select>
+
 
                 <Select value={selectedType} onValueChange={setSelectedType}>
                   <SelectTrigger>
