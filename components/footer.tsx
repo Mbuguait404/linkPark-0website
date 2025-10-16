@@ -134,7 +134,9 @@ export function Footer() {
                         />
                       </Link>
           </div>
-          <p className="text-sm opacity-80">© 2025 LinkPark Recruitment Agency. All rights reserved.</p>
+          <Link href="https://www.lancolatech.com" className="text-sm opacity-80 hover:opacity-100">
+          <p className="text-sm opacity-80">© 2025 Lancola Tech. All rights reserved.</p>
+          </Link>
         </div>
       </div>
     </footer>
