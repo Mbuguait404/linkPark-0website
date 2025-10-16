@@ -12,10 +12,10 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-20">
+      <section className="bg-gradient-to-b from-[#4dfbdf]/10 to-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <Badge className="mb-4 bg-purple-100 text-purple-700 hover:bg-purple-100">About LinkPark</Badge>
+            <Badge className="mb-4 bg-[#4dfbdf]/20 text-[#0b0f7e] hover:bg-[#4dfbdf]/20">About LinkPark</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
               Empowering Kenyan Youth Through Global Opportunities
             </h1>
@@ -31,8 +31,8 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="p-8 border-2 hover:border-purple-200 transition-colors">
-              <Target className="w-12 h-12 text-purple-600 mb-4" />
+            <Card className="p-8 border-2 hover:border-[#4dfbdf]/40 transition-colors">
+              <Target className="w-12 h-12 text-[#0b0f7e] mb-4" />
               <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
               <p className="text-muted-foreground leading-relaxed">
                 To empower Kenyan youth by providing access to international employment opportunities, particularly in
@@ -40,8 +40,8 @@ export default function AboutPage() {
                 career journey.
               </p>
             </Card>
-            <Card className="p-8 border-2 hover:border-purple-200 transition-colors">
-              <TrendingUp className="w-12 h-12 text-purple-600 mb-4" />
+            <Card className="p-8 border-2 hover:border-[#4dfbdf]/40 transition-colors">
+              <TrendingUp className="w-12 h-12 text-[#0b0f7e] mb-4" />
               <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
               <p className="text-muted-foreground leading-relaxed">
                 To be the leading recruitment agency in East Africa, recognized for transforming lives through quality
@@ -63,11 +63,11 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="p-8">
               <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mb-6 flex items-center justify-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-[#4dfbdf] to-[#0b0f7e] rounded-full mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Dominic Chelimo</h3>
-                <p className="text-purple-600 font-semibold mb-4">Chief Executive Officer</p>
+                <p className="text-[#0b0f7e] font-semibold mb-4">Chief Executive Officer</p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   With over 15 years of experience in international recruitment, Dominic leads LinkPark's strategic
                   vision and oversees operations across all markets. His expertise in Gulf region employment has helped
@@ -82,11 +82,11 @@ export default function AboutPage() {
             </Card>
             <Card className="p-8">
               <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mb-6 flex items-center justify-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-[#4dfbdf] to-[#0b0f7e] rounded-full mb-6 flex items-center justify-center">
                   <Users className="w-16 h-16 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Alicent Togom</h3>
-                <p className="text-purple-600 font-semibold mb-4">Executive Director</p>
+                <p className="text-[#0b0f7e] font-semibold mb-4">Executive Director</p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Alicent brings extensive expertise in talent management and client relations, ensuring exceptional
                   service delivery and candidate success. She oversees candidate preparation, compliance, and
@@ -113,24 +113,24 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-[#4dfbdf]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-[#0b0f7e]" />
               </div>
               <h3 className="text-xl font-bold mb-3">Licensed Recruitment Agency</h3>
               <p className="text-muted-foreground mb-4">Fully licensed by the National Employment Authority of Kenya</p>
               <Badge className="bg-green-100 text-green-700 hover:bg-green-100">Verified</Badge>
             </Card>
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-[#4dfbdf]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-[#0b0f7e]" />
               </div>
               <h3 className="text-xl font-bold mb-3">ISO Certified</h3>
               <p className="text-muted-foreground mb-4">ISO 9001:2015 certified for quality management systems</p>
               <Badge className="bg-green-100 text-green-700 hover:bg-green-100">Certified</Badge>
             </Card>
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-[#4dfbdf]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-8 h-8 text-[#0b0f7e]" />
               </div>
               <h3 className="text-xl font-bold mb-3">Gulf Cooperation Council</h3>
               <p className="text-muted-foreground mb-4">Approved recruitment partner for GCC member states</p>
@@ -151,7 +151,7 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <Heart className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+              <Heart className="w-12 h-12 text-[#0b0f7e] mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-3">Integrity</h3>
               <p className="text-muted-foreground">
                 We maintain the highest ethical standards in all our recruitment practices

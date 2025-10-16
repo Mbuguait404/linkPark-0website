@@ -187,7 +187,7 @@ export default function IndustriesPage() {
                       </div>
                       <Button variant="link" className="p-0" asChild>
                         <Link href="/contact">
-                          Explore opportunities <ArrowRight className="w-4 h-4 ml-2" />
+                          Inquire About Opportunity <ArrowRight className="w-4 h-4" />
                         </Link>
                       </Button>
                     </div>

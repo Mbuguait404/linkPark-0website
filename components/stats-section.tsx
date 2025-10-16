@@ -78,7 +78,7 @@ function AnimatedStat({
 
   return (
     <div className="text-center">
-      <div className="text-4xl font-bold text-primary mb-2 transition-all duration-500">
+      <div className="text-4xl font-bold text-[#0b0f7e] mb-2 transition-all duration-500">
         {count.toLocaleString()}
         {count === value ? suffix : ""}
       </div>

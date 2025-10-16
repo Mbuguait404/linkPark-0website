@@ -188,65 +188,56 @@ export default function JobsPage() {
           </div>
 
           {/* Job Listings */}
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredJobs.map((job) => (
-              <Card key={job.id} className="border-2 hover:border-primary transition-colors group">
+              <Card key={job.id} className="border-2 transition-all group hover:border-[#4dfbdf]/60 hover:shadow-lg hover:-translate-y-1">
                 <CardContent className="pt-6">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-start gap-4 mb-3">
-                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <Briefcase className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-1 group-hover:text-primary transition-colors">
-                            {job.title}
-                          </h3>
-                          <p className="text-lg text-muted-foreground mb-2">{job.company}</p>
-                          <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-                            <div className="flex items-center gap-1">
-                              <MapPin className="w-4 h-4" />
-                              {job.location}
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <Briefcase className="w-4 h-4" />
-                              {job.type}
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <DollarSign className="w-4 h-4" />
-                              {job.salary}
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <Clock className="w-4 h-4" />
-                              {job.posted}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <p className="text-muted-foreground mb-3">{job.description}</p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {job.skills.map((skill, idx) => (
-                          <Badge key={idx} variant="secondary">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
+                  <div className="flex items-start gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Briefcase className="w-6 h-6 text-primary" />
                     </div>
-
-                    <div className="flex lg:flex-col gap-2">
-                      <Button className="flex-1 lg:flex-none" asChild>
-                        <Link href={`/jobs/${job.id}`}>
-                          View Details
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </Button>
-                      <Button variant="outline" className="flex-1 lg:flex-none bg-transparent">
-                        Save Job
-                      </Button>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold mb-1 group-hover:text-primary transition-colors">
+                        {job.title}
+                      </h3>
+                      <p className="text-lg text-muted-foreground mb-2">{job.company}</p>
+                      <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          {job.location}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Briefcase className="w-4 h-4" />
+                          {job.type}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <DollarSign className="w-4 h-4" />
+                          {job.salary}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-4 h-4" />
+                          {job.posted}
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <p className="text-muted-foreground mb-3">{job.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {job.skills.map((skill, idx) => (
+                      <Badge key={idx} variant="secondary">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <Button className="w-full" asChild>
+                    <Link href={`/jobs/${job.id}`}>
+                      View Details
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}

@@ -375,19 +375,19 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-purple-50 to-white">
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-[#4dfbdf]/10 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl">
-            <Badge className="mb-4 bg-purple-100 text-purple-700 hover:bg-purple-100">Industry Focus</Badge>
+            <Badge className="mb-4 bg-[#4dfbdf]/20 text-[#0b0f7e] hover:bg-[#4dfbdf]/20">Industry Focus</Badge>
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-lg bg-purple-600 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-lg bg-[#0b0f7e] flex items-center justify-center">
                 <Icon className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-balance">{industry.title}</h1>
             </div>
             <p className="text-xl text-muted-foreground mb-8 text-pretty">{industry.description}</p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700" asChild>
+              <Button size="lg" className="bg-[#0b0f7e] hover:bg-[#4dfbdf] hover:text-[#0b0f7e] text-white" asChild>
                 <Link href="/jobs">View Open Positions</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
@@ -399,13 +399,13 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 px-4 bg-purple-600 text-white">
+      <section className="py-12 px-4 bg-[#0b0f7e] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {industry.stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-purple-100">{stat.label}</div>
+                <div className="text-[#4dfbdf]">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -426,7 +426,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
               <ul className="space-y-2">
                 {industry.positions.slice(0, 5).map((position, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#0b0f7e] flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-muted-foreground">{position}</span>
                   </li>
                 ))}
@@ -443,7 +443,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
               <ul className="space-y-2">
                 {industry.requirements.map((requirement, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#0b0f7e] flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-muted-foreground">{requirement}</span>
                   </li>
                 ))}
@@ -455,7 +455,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
               <ul className="space-y-2">
                 {industry.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#0b0f7e] flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-muted-foreground">{benefit}</span>
                   </li>
                 ))}
@@ -493,28 +493,28 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full bg-[#0b0f7e] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
                 1
               </div>
               <h3 className="text-lg font-bold mb-2">Submit Application</h3>
               <p className="text-sm text-muted-foreground">Apply online with your CV and required documents</p>
             </Card>
             <Card className="p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full bg-[#0b0f7e] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
                 2
               </div>
               <h3 className="text-lg font-bold mb-2">Initial Screening</h3>
               <p className="text-sm text-muted-foreground">Our team reviews your qualifications and experience</p>
             </Card>
             <Card className="p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full bg-[#0b0f7e] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
                 3
               </div>
               <h3 className="text-lg font-bold mb-2">Interview & Matching</h3>
               <p className="text-sm text-muted-foreground">Interview with our team and match with suitable employers</p>
             </Card>
             <Card className="p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full bg-[#0b0f7e] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
                 4
               </div>
               <h3 className="text-lg font-bold mb-2">Placement & Travel</h3>
@@ -527,7 +527,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-purple-600 text-white">
+      <section className="py-20 px-4 bg-[#0b0f7e] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to start your career in {industry.title}?</h2>
           <p className="text-xl mb-8 opacity-90">
@@ -540,7 +540,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
             <Button
               size="lg"
               variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-purple-600"
+              className="bg-transparent border-white text-white hover:bg-white hover:text-[#0b0f7e]"
               asChild
             >
               <Link href="/contact">Contact Us</Link>

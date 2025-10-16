@@ -15,8 +15,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function JobDetailPage({ params }: { params: { id: string } }) {
-  const job = jobs.find((j) => j.id === params.id);
+export default async function JobDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const job = jobs.find((j) => j.id === id);
 
   if (!job) {
     notFound()
@@ -163,9 +164,6 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                     <div className="text-sm text-muted-foreground mb-1">Posted</div>
                     <div className="font-semibold">{job.posted}</div>
                   </div>
-                  <Button className="w-full bg-secondary hover:bg-secondary" size="lg" asChild>
-                    <Link href="/signup">Apply Now</Link>
-                  </Button>
                   <Button className="w-full bg-transparent" variant="outline" size="lg" asChild>
                     <Link href="/contact">Contact Recruiter</Link>
                   </Button>

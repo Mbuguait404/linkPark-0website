@@ -21,7 +21,10 @@ export function Header() {
   const toggleDropdown = (name: string) =>
     setOpenDropdown(openDropdown === name ? null : name)
 
-  const navLinks = [
+  type MegaMenu = { columns: { title: string; links: { name: string; href: string }[] }[] }
+  type NavLink = { name: string; href: string; mega?: MegaMenu }
+
+  const navLinks: NavLink[] = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     {
@@ -58,38 +61,38 @@ export function Header() {
     //     ],
     //   },
     // },
-    {
-      name: "Locations",
-      href: "/locations",
-      mega: {
-        columns: [
-          {
-            title: "Middle East",
-            links: [
-              { name: "Dubai", href: "/locations/dubai" },
-              { name: "Kuwait", href: "/locations/kuwait" },
-              { name: "Qatar", href: "/locations/qatar" },
-            ],
-          },
-          {
-            title: "Africa",
-            links: [
-              { name: "Kenya", href: "/locations/kenya" },
-              { name: "Nigeria", href: "/locations/nigeria" },
-              { name: "South Africa", href: "/locations/south-africa" },
-            ],
-          },
-          {
-            title: "Europe",
-            links: [
-              { name: "UK", href: "/locations/uk" },
-              { name: "Germany", href: "/locations/germany" },
-              { name: "France", href: "/locations/france" },
-            ],
-          },
-        ],
-      },
-    },
+    // {
+    //   name: "Locations",
+    //   href: "/locations",
+    //   mega: {
+    //     columns: [
+    //       {
+    //         title: "Middle East",
+    //         links: [
+    //           { name: "Dubai", href: "/locations/dubai" },
+    //           { name: "Kuwait", href: "/locations/kuwait" },
+    //           { name: "Qatar", href: "/locations/qatar" },
+    //         ],
+    //       },
+    //       {
+    //         title: "Africa",
+    //         links: [
+    //           { name: "Kenya", href: "/locations/kenya" },
+    //           { name: "Nigeria", href: "/locations/nigeria" },
+    //           { name: "South Africa", href: "/locations/south-africa" },
+    //         ],
+    //       },
+    //       {
+    //         title: "Europe",
+    //         links: [
+    //           { name: "UK", href: "/locations/uk" },
+    //           { name: "Germany", href: "/locations/germany" },
+    //           { name: "France", href: "/locations/france" },
+    //         ],
+    //       },
+    //     ],
+    //   },
+    // },
     { name: "Jobs", href: "/jobs" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
@@ -174,14 +177,6 @@ export function Header() {
               asChild
             >
               <Link href="/jobs">View Available Positions</Link>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-[#0b0f7e] hover:text-[#4dfbdf]"
-              asChild
-            >
-              <Link href="/apply">Apply Now</Link>
             </Button>
           </div>
 
@@ -273,13 +268,6 @@ export function Header() {
                 </nav>
 
                 <div className="mt-8 flex flex-col gap-3">
-                  <Button
-                    variant="ghost"
-                    className="text-[#0b0f7e] hover:text-[#4dfbdf]"
-                    asChild
-                  >
-                    <Link href="/login">Apply Now</Link>
-                  </Button>
                   <Button
                     className="bg-[#0b0f7e] hover:bg-[#4dfbdf] hover:text-[#0b0f7e] text-white"
                     asChild

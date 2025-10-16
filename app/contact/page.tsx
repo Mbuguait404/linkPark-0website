@@ -10,14 +10,56 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react"
 import { motion } from "framer-motion"
+import { useState } from "react"
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [submitSuccess, setSubmitSuccess] = useState<string | null>(null)
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setSubmitError(null)
+    setSubmitSuccess(null)
+    setIsSubmitting(true)
+
+    try {
+      const form = event.currentTarget
+      const formData = new FormData(form)
+
+      // Required by Web3Forms
+      formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "3bf6a038-60a7-4909-91fc-f91d61aa91b5")
+
+      // Optional: subject fallback
+      if (!formData.get("subject")) {
+        formData.set("subject", "New message from LinkPark contact form")
+      }
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+
+      const result = await response.json()
+      if (result.success) {
+        setSubmitSuccess("Thanks! Your message has been sent.")
+        form.reset()
+      } else {
+        setSubmitError(result.message || "Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      setSubmitError("Network error. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-20">
+      <section className="bg-gradient-to-b from-[#4dfbdf]/10 to-white py-20">
          {/* 🌊 Animated Curved Background */}
       <motion.svg
         className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
@@ -55,7 +97,7 @@ export default function ContactPage() {
       </motion.svg>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <Badge className="mb-4 bg-purple-100 text-purple-700 hover:bg-purple-100">Get In Touch</Badge>
+            <Badge className="mb-4 bg-[#4dfbdf]/20 text-[#0b0f7e] hover:bg-[#4dfbdf]/20">Get In Touch</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Contact LinkPark</h1>
             <p className="text-xl text-muted-foreground text-pretty">
               Have questions about our services? We're here to help you start your international career journey.
@@ -78,10 +120,10 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <Card className="p-6 border-2 hover:border-purple-200 transition-colors">
+              <Card className="p-6 border-2 hover:border-[#4dfbdf]/40 transition-colors">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-[#4dfbdf]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-[#0b0f7e]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Office Address</h3>
@@ -94,10 +136,10 @@ export default function ContactPage() {
                 </div>
               </Card>
 
-              <Card className="p-6 border-2 hover:border-purple-200 transition-colors">
+              <Card className="p-6 border-2 hover:border-[#4dfbdf]/40 transition-colors">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-purple-600" />
+                    <div className="w-12 h-12 bg-[#4dfbdf]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-[#0b0f7e]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Phone Numbers</h3>
@@ -110,10 +152,10 @@ export default function ContactPage() {
                 </div>
               </Card>
 
-              <Card className="p-6 border-2 hover:border-purple-200 transition-colors">
+              <Card className="p-6 border-2 hover:border-[#4dfbdf]/40 transition-colors">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-[#4dfbdf]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-[#0b0f7e]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Email Address</h3>
@@ -122,10 +164,10 @@ export default function ContactPage() {
                 </div>
               </Card>
 
-              <Card className="p-6 border-2 hover:border-purple-200 transition-colors">
+              <Card className="p-6 border-2 hover:border-[#4dfbdf]/40 transition-colors">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-[#4dfbdf]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-[#0b0f7e]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Business Hours</h3>
@@ -144,46 +186,59 @@ export default function ContactPage() {
             {/* Contact Form */}
             <Card className="p-8">
               <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                {/* Honeypot field for bots */}
+                <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
+                {/* From name for Web3Forms convenience */}
+                <input type="hidden" name="from_name" value="LinkPark Website" />
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" />
+                    <Input id="firstName" name="first_name" placeholder="John" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" />
+                    <Input id="lastName" name="last_name" placeholder="Doe" required />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="email">Email Address</Label>
-                  <Input id="email" type="email" placeholder="john.doe@example.com" />
+                  <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="+254 700 000 000" />
+                  <Input id="phone" name="phone" type="tel" placeholder="+254 700 000 000" />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="How can we help you?" />
+                  <Input id="subject" name="subject" placeholder="How can we help you?" />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Tell us more about your inquiry..."
                     rows={6}
                     className="resize-none"
+                    required
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-purple-600 hover:bg-purple-700">
+                {submitError ? (
+                  <p className="text-sm text-red-600">{submitError}</p>
+                ) : null}
+                {submitSuccess ? (
+                  <p className="text-sm text-green-600">{submitSuccess}</p>
+                ) : null}
+
+                <Button type="submit" size="lg" className="w-full bg-[#0b0f7e] hover:bg-[#4dfbdf] hover:text-[#0b0f7e] text-white" disabled={isSubmitting}>
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </Card>
