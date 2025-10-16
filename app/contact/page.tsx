@@ -159,7 +159,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Email Address</h3>
-                    <p className="text-muted-foreground">overseasconnections@gmail.com</p>
+                    <p className="text-muted-foreground">info@linkparkoffshore.co.ke</p>
                   </div>
                 </div>
               </Card>

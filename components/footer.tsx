@@ -105,8 +105,8 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm opacity-90">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a href="mailto:overseasconnections@gmail.com" className="hover:opacity-100">
-                  overseasconnections@gmail.com
+                <a href="mailto:info@linkparkoffshore.co.ke" className="hover:opacity-100">
+                  info@linkparkoffshore.co.ke
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm opacity-90">
