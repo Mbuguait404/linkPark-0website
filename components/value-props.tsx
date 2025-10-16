@@ -1,10 +1,11 @@
 export function ValueProps() {
-  const values = [
-    { label: "faster", color: "bg-yellow-400" },
-    { label: "Grow quicker", color: "bg-yellow-400" },
-    { label: "Build better", color: "bg-yellow-400" },
-    { label: "Succeed faster", color: "bg-yellow-400" },
-  ]
+const values = [
+  { label: "Dream Bigger", color: "bg-yellow-400" },
+  { label: "Work Abroad", color: "bg-yellow-400" },
+  { label: "Grow Globally", color: "bg-yellow-400" },
+  { label: "Change Lives", color: "bg-yellow-400" },
+]
+
 
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8">

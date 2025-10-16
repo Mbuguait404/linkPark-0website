@@ -1,23 +1,25 @@
 import { Card } from "@/components/ui/card"
 
 export function ReviewsSection() {
-  const reviews = [
-    {
-      text: "LinkPark's international placement service opened doors I never knew existed. Now working in Singapore!",
-      author: "Alex Thompson",
-      role: "Software Engineer",
-    },
-    {
-      text: "The team understood exactly what I was looking for and delivered beyond expectations. Highly recommend!",
-      author: "Priya Sharma",
-      role: "UX Designer",
-    },
-    {
-      text: "From application to offer in just 2 weeks. The fastest and most professional recruitment experience I've had.",
-      author: "Carlos Martinez",
-      role: "Financial Analyst",
-    },
-  ]
+const reviews = [
+  {
+    text: "I never thought I’d work in Europe. LinkPark guided me through every step — from interview prep to relocation. Now I’m thriving in Munich!",
+    author: "Grace Muthoni",
+    role: "Nurse – Germany",
+  },
+  {
+    text: "After years of job hunting, LinkPark helped me find work in Dubai’s hospitality industry. I can finally support my family comfortably.",
+    author: "Naomi Sesay",
+    role: "Hotel Attendant – UAE",
+  },
+  {
+    text: "LinkPark connected me to a logistics company in Poland. Their support during the visa and travel process was exceptional!",
+    author: "Peter Mugisha",
+    role: "Truck Driver – Poland",
+  },
+]
+
+
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">

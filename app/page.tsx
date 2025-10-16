@@ -5,7 +5,7 @@ import { CountriesSection } from "@/components/countries-section"
 import { FeaturesSection } from "@/components/features-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { QuoteSection } from "@/components/quote-section"
-import { PricingSection } from "@/components/pricing-section"
+import { MinCollageSection } from "@/components/min-collage-seciton"
 import { ReviewsSection } from "@/components/reviews-section"
 import { ValueProps } from "@/components/value-props"
 import { FAQSection } from "@/components/faq-section"
@@ -22,7 +22,7 @@ export default function Home() {
       <FeaturesSection />
       <TestimonialsSection />
       <QuoteSection />
-      <PricingSection />
+      <MinCollageSection />
       <ReviewsSection />
       <ValueProps />
       <FinalCTA />

@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Target, Globe2, Zap } from "lucide-react"
 
 export function FeaturesSection() {
   return (
@@ -38,31 +39,39 @@ export function FeaturesSection() {
         </div>
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
-          <Card className="p-6 space-y-4">
-            <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center text-2xl">🎯</div>
-            <h3 className="text-xl font-semibold">Targeted Job Search</h3>
-            <p className="text-muted-foreground">
-              Filter opportunities by location, industry, salary range, and work arrangement to find your ideal
-              position.
-            </p>
-          </Card>
-
-          <Card className="p-6 space-y-4">
-            <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center text-2xl">🌐</div>
-            <h3 className="text-xl font-semibold">Global Network</h3>
-            <p className="text-muted-foreground">
-              Access opportunities across 45+ countries with our extensive network of international employers.
-            </p>
-          </Card>
-
-          <Card className="p-6 space-y-4">
-            <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center text-2xl">⚡</div>
-            <h3 className="text-xl font-semibold">Fast Placement</h3>
-            <p className="text-muted-foreground">
-              Average placement time of just 18 days from application to offer acceptance.
-            </p>
-          </Card>
+      {/* Targeted Job Search */}
+      <Card className="p-6 space-y-4 hover:shadow-lg transition-shadow rounded-2xl">
+        <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+          <Target className="w-6 h-6 text-accent-foreground" />
         </div>
+        <h3 className="text-xl font-semibold">Targeted Job Search</h3>
+        <p className="text-muted-foreground">
+          Filter opportunities by location, industry, salary range, and work arrangement to find your ideal position.
+        </p>
+      </Card>
+
+      {/* Global Network */}
+      <Card className="p-6 space-y-4 hover:shadow-lg transition-shadow rounded-2xl">
+        <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+          <Globe2 className="w-6 h-6 text-accent-foreground" />
+        </div>
+        <h3 className="text-xl font-semibold">Global Network</h3>
+        <p className="text-muted-foreground">
+          Access opportunities across 45+ countries with our extensive network of international employers.
+        </p>
+      </Card>
+
+      {/* Fast Placement */}
+      <Card className="p-6 space-y-4 hover:shadow-lg transition-shadow rounded-2xl">
+        <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+          <Zap className="w-6 h-6 text-accent-foreground" />
+        </div>
+        <h3 className="text-xl font-semibold">Fast Placement</h3>
+        <p className="text-muted-foreground">
+          Average placement time of just 18 days from application to offer acceptance.
+        </p>
+      </Card>
+    </div>
       </div>
     </section>
   )

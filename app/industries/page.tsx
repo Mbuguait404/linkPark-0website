@@ -18,6 +18,8 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { MinCollageSection } from "@/components/min-collage-seciton"
+import { StatsSection } from "@/components/stats-section"
 
 export default function IndustriesPage() {
   const industries = [
@@ -145,28 +147,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 px-4 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">2,500+</div>
-              <div className="text-muted-foreground">Successful Placements</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">8</div>
-              <div className="text-muted-foreground">Key Industries</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
-              <div className="text-muted-foreground">Partner Companies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">95%</div>
-              <div className="text-muted-foreground">Client Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StatsSection />
 
       {/* Industries Grid */}
       <section className="py-20 px-4">
@@ -289,6 +270,8 @@ export default function IndustriesPage() {
           </div>
         </div>
       </section>
+
+      <MinCollageSection />
 
       {/* CTA Section */}
       <section className="py-20 px-4">

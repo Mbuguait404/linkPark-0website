@@ -25,37 +25,39 @@ export function Header() {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     {
-      name: "Industries",
-      href: "/industries",
-      mega: {
-        columns: [
-          {
-            title: "Corporate & Finance",
-            links: [
-              { name: "Banking", href: "/industries/banking" },
-              { name: "Insurance", href: "/industries/insurance" },
-              { name: "Investment", href: "/industries/investment" },
-            ],
-          },
-          {
-            title: "Technology & Media",
-            links: [
-              { name: "IT Services", href: "/industries/it-services" },
-              { name: "Telecommunications", href: "/industries/telecom" },
-              { name: "Advertising", href: "/industries/advertising" },
-            ],
-          },
-          {
-            title: "Manufacturing & Logistics",
-            links: [
-              { name: "Automotive", href: "/industries/automotive" },
-              { name: "Energy", href: "/industries/energy" },
-              { name: "Construction", href: "/industries/construction" },
-            ],
-          },
-        ],
-      },
-    },
+      name: "Industries", href: "/industries" },
+    // {
+    //   name: "Industries",
+    //   href: "/industries",
+    //   mega: {
+    //     columns: [
+    //       {
+    //         title: "Corporate & Finance",
+    //         links: [
+    //           { name: "Banking", href: "/industries/banking" },
+    //           { name: "Insurance", href: "/industries/insurance" },
+    //           { name: "Investment", href: "/industries/investment" },
+    //         ],
+    //       },
+    //       {
+    //         title: "Technology & Media",
+    //         links: [
+    //           { name: "IT Services", href: "/industries/it-services" },
+    //           { name: "Telecommunications", href: "/industries/telecom" },
+    //           { name: "Advertising", href: "/industries/advertising" },
+    //         ],
+    //       },
+    //       {
+    //         title: "Manufacturing & Logistics",
+    //         links: [
+    //           { name: "Automotive", href: "/industries/automotive" },
+    //           { name: "Energy", href: "/industries/energy" },
+    //           { name: "Construction", href: "/industries/construction" },
+    //         ],
+    //       },
+    //     ],
+    //   },
+    // },
     {
       name: "Locations",
       href: "/locations",
@@ -90,6 +92,8 @@ export function Header() {
     },
     { name: "Jobs", href: "/jobs" },
     { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+
   ]
 
   return (
@@ -163,20 +167,21 @@ export function Header() {
 
           {/* Right Buttons */}
           <div className="hidden sm:flex items-center gap-3">
+            
+            <Button
+              size="sm"
+              className="bg-[#0b0f7e] hover:bg-[#4dfbdf] hover:text-[#0b0f7e] text-white"
+              asChild
+            >
+              <Link href="/jobs">View Available Positions</Link>
+            </Button>
             <Button
               variant="ghost"
               size="sm"
               className="text-[#0b0f7e] hover:text-[#4dfbdf]"
               asChild
             >
-              <Link href="/login">Sign In</Link>
-            </Button>
-            <Button
-              size="sm"
-              className="bg-[#0b0f7e] hover:bg-[#4dfbdf] hover:text-[#0b0f7e] text-white"
-              asChild
-            >
-              <Link href="/signup">Get Started</Link>
+              <Link href="/apply">Apply Now</Link>
             </Button>
           </div>
 
@@ -273,13 +278,13 @@ export function Header() {
                     className="text-[#0b0f7e] hover:text-[#4dfbdf]"
                     asChild
                   >
-                    <Link href="/login">Sign In</Link>
+                    <Link href="/login">Apply Now</Link>
                   </Button>
                   <Button
                     className="bg-[#0b0f7e] hover:bg-[#4dfbdf] hover:text-[#0b0f7e] text-white"
                     asChild
                   >
-                    <Link href="/signup">Get Started</Link>
+                    <Link href="/jobs">View Available Positions</Link>
                   </Button>
                 </div>
               </SheetContent>
